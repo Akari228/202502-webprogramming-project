@@ -19,7 +19,7 @@
 
 # 2025 / 11 / 22
 ## 김강현 작성
-오늘 스터디 그룹 관련 편의 기능과 게시판 상세 보기/댓글 기능을 추가했습니다. 수정한 파일이 한두개가 아니라서 그냥 압축 폴더(update_kang.zip)로 올립니다. 설정 방법은 동욱씨가 설명했으니 생략하고 혹시나 팀원분들의 데이터베이스에 아직 '댓글(Comment)' 테이블이 없어 no such table: study_comment" 오류가 뜰 가능성이 있으니 python manage.py runserver를 하기 전에 터미널에 python manage.py migrate를 먼저 한번 실행해주세요.
+오늘 스터디 그룹 관련 편의 기능과 게시판 상세 보기/댓글 기능을 추가했습니다. 수정 또는 추가한 파일이 한두개가 아니라서 그냥 압축 폴더(update_kang.zip)로 올립니다. 설정 방법은 동욱씨가 설명했으니 생략하고 혹시나 팀원분들의 데이터베이스에 아직 '댓글(Comment)' 테이블이 없어 no such table: study_comment" 오류가 뜰 가능성이 있으니 python manage.py runserver를 하기 전에 터미널에 python manage.py migrate를 먼저 한번 실행해주세요.
 
 아래는 자세한 수정사항입니다.
 
