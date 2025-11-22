@@ -18,6 +18,47 @@
 # 2025 / 11 / 21
 
 # 2025 / 11 / 22
+## 김강현 작성
+오늘 스터디 그룹 관련 편의 기능과 게시판 상세 보기/댓글 기능을 추가했습니다. 수정한 파일이 한두개가 아니라서 그냥 압축 폴더(update_kang.zip)로 올립니다. 설정 방법은 동욱씨가 설명했으니 생략하고 혹시나 팀원분들의 데이터베이스에 아직 '댓글(Comment)' 테이블이 없어 no such table: study_comment" 오류가 뜰 가능성이 있으니 python manage.py runserver를 하기 전에 터미널에 python manage.py migrate를 먼저 한번 실행해주세요.
+
+아래는 자세한 수정사항입니다.
+
+1. 스터디 정보 수정 기능 (리더 전용)
+내용: 스터디 상세 화면에서 리더에게만 보이는 '✏️ 수정하기' 버튼(빨간색 테두리)을 추가했습니다. 버튼을 누르면 그룹명, 소개, 요일 등을 수정할 수 있습니다.
+
+수정한 파일: study/views.py, study/urls.py, study/templates/study-detail.html
+
+추가한 파일: study/templates/edit_study.html
+
+2. 스터디 입장 버튼 개선
+내용: 내가 참여한 그룹일 경우, 기존의 비활성화된 "이미 참여중인 스터디입니다" 버튼을 삭제하고, 클릭 시 바로 게시판으로 이동하는 "스터디 입장 →" 버튼(초록 배경/초록 테두리)으로 교체했습니다.
+
+수정한 파일: study/templates/study-detail.html
+
+3. 게시판 화면 네비게이션 변경
+내용: 게시판(스터디 내부) 화면 왼쪽 위의 "← 내 스터디 목록으로 돌아가기" 링크를 "← 홈으로 돌아가기"로 변경하여 동선을 단축했습니다.
+
+수정한 파일: study/templates/study-joined.html
+
+4. 글쓰기 게시판 종류 자동 선택
+내용: 공지사항/자료실/자유게시판 각 섹션의 '+ 새 글 쓰기' 버튼을 누르면, 글쓰기 화면에서 해당 게시판 종류가 자동으로 선택되어 있도록 개선했습니다.
+
+수정한 파일: study/templates/study-joined.html, study/views.py, study/templates/create-post.html
+
+5. 게시글 상세 보기 및 댓글 기능 (★중요★)
+내용:
+
+게시글 제목 클릭 시 상세 내용을 볼 수 있는 페이지를 만들었습니다.
+
+댓글 작성, 수정, 삭제 기능을 구현했습니다.
+
+기존에 TIME_ZONE = 'UTC' 로 설정되어 있던걸 TIME_ZONE = 'Asia/Seoul'로 변경해 한국과 약 9시간정도 차이가 나던 문제를 해결했습니다.
+
+상세 페이지 디자인(글자 크기 확대, 게시판 아이콘 표시 등)을 개선했습니다.
+
+수정한 파일: study/models.py (Comment 모델 추가), study/views.py, study/urls.py, study/templates/study-joined.html, config/settings.py
+
+추가한 파일: study/templates/post_detail.html, study/templates/edit_comment.html
 
 # 2025 / 11 / 23
 
