@@ -72,8 +72,11 @@
 뒤로가기 버튼 없던거 추가
 
 그리고 파일 옮기셨다면, 터미널에서
+
 python manage.py makemigrations
+
 python manage.py migrate
+
 이 두개 명령어 꼭 입력해주세요!
 
 수정된 파일은 update_LEE 이거로 업로드 해놓았습니다. 그거 그대로 가져다가 쓰시면 됩니다.
