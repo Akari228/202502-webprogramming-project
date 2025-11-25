@@ -43,7 +43,48 @@
 4. 글쓰기 게시판 종류 자동 선택
 내용: 공지사항/자료실/자유게시판 각 섹션의 '+ 새 글 쓰기' 버튼을 누르면, 글쓰기 화면에서 해당 게시판 종류가 자동으로 선택되어 있도록 개선했습니다.
 
-수정한 파일: study요
+수정한 파일: study/templates/study-joined.html, study/views.py, study/templates/create-post.html
+
+5. 게시글 상세 보기 및 댓글 기능 (★중요★)
+내용:
+
+게시글 제목 클릭 시 상세 내용을 볼 수 있는 페이지를 만들었습니다.
+
+댓글 작성, 수정, 삭제 기능을 구현했습니다.
+
+기존에 TIME_ZONE = 'UTC' 로 설정되어 있던걸 TIME_ZONE = 'Asia/Seoul'로 변경해 한국과 약 9시간정도 차이가 나던 문제를 해결했습니다.
+
+상세 페이지 디자인(글자 크기 확대, 게시판 아이콘 표시 등)을 개선했습니다.
+
+수정한 파일: study/models.py (Comment 모델 추가), study/views.py, study/urls.py, study/templates/study-joined.html, config/settings.py
+
+추가한 파일: study/templates/post_detail.html, study/templates/edit_comment.html
+
+# 2025 / 11 / 23
+## 이동욱 작성
+
+1. 파일 업로드 추가
+   
+스터디 그룹 게시판에서 파일 업로드를 할 수 있습니다.
+
+3. 그룹 생성하기 페이지 뒤로가기 버튼 추가
+   
+뒤로가기 버튼 없던거 추가
+
+그리고 파일 옮기셨다면, 가상 환경 상태에서 터미널에
+
+python manage.py makemigrations
+
+python manage.py migrate
+
+이 두개 명령어 꼭 입력해주세요!
+
+수정된 파일은 update_LEE 이거로 업로드 해놓았습니다. 그거 그대로 가져다가 쓰시면 됩니다.
+
+# 2025 / 11 / 24
+
+최신 버전으로 yonsei.zip 올려놓았습니다. 실행에 문제 있으신 분들은 이 파일로 한번 진행해 보세요
+
 
 # 2025 / 11 / 25
 
